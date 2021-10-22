@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
     "test": "jest --coverage",
-    "e2e":"jest --testPathPattern=./e2e/ --runInBand"
+    "e2e": "jest --testPathPattern=./e2e/ --runInBand"
   },
   "repository": {
     "type": "git",
