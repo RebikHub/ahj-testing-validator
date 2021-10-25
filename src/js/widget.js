@@ -1,6 +1,9 @@
-export default class widget {
+import luhnAlgorithm from './validate';
+
+export default class Widget {
   constructor() {
     this.validator = document.querySelector('#validator');
+    this.inputNumber = null;
   }
 
   renderDom() {
@@ -32,5 +35,35 @@ export default class widget {
     cardsLi[6].classList.add('card', 'mir');
     form.appendChild(input);
     form.appendChild(button);
+
+    this.inputValue();
+  }
+
+  inputValue() {
+    const input = document.querySelector('input');
+    const button = document.querySelector('button');
+
+    input.addEventListener('input', (e) => {
+      this.inputNumber = e.target.value;
+    });
+    button.addEventListener('click', () => {
+      Widget.checkValidate(this.inputNumber);
+    });
+  }
+
+  static checkValidate(number) {
+    console.log(number);
+    const valid = luhnAlgorithm(number);
+    console.log(valid);
+    const input = document.querySelector('input');
+    if (input.classList.contains('valid') || input.classList.contains('not-valid')) {
+      input.classList.remove('valid');
+      input.classList.remove('not-valid');
+    }
+    if (valid) {
+      input.classList.add('valid');
+    } else {
+      input.classList.add('not-valid');
+    }
   }
 }
