@@ -1,9 +1,7 @@
-import Gallery from './gallery';
+import Widget from './widget';
 
 console.log('app started');
 
-const inputName = document.querySelector('.input-name');
-const inputSrc = document.querySelector('.input-src');
-const gallery = new Gallery(inputName, inputSrc);
+const widget = new Widget();
 
-gallery.init(document.querySelector('.button'));
+widget.renderDom();

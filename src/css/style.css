@@ -7,90 +7,99 @@ body {
     color: #999;
 }
 
-#gallery {
-
-}
-
-.images-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.form-widget {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    height: 200px;
+#validator {
     margin: auto;
-    border: 1px solid #999;
-    border-radius: 30px;
+    margin-top: 50px;
+    width: 500px;
+    height: 250px;
 }
 
-.lable-name {
-    margin: 35px 20px 0px 20px;
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: black;
 }
 
-.lable-src {
-    margin: 20px 20px 20px 20px;
+ul {
+    display: flex;
+    margin: 10px 0;
+    height: 25px;
+    padding-left: 0;
+    list-style: none;
 }
 
-.input-name{
-    width: 253px;
-    margin-left: 139px;
+li {
+    padding-left: 0;
+    list-style: none;
 }
 
-.input-src {
-    width: 253px;
-    margin-left: 40px;
+.card {
+    width: 39px;
+    height: 25px;
+    margin-right: 4px;
 }
 
-.button {
-    width: 100px;
-    height: 30px;
-    border-style: none;
-    border-radius: 20px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+.disable {
+    opacity: 0.3;
 }
 
-.image {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin-left: 30px;
-    margin-top: 40px;
-    border: 1px solid #999;
+.visa {
+    background-image: url(../img/visa.png);
     background-size: cover;
 }
 
-.close-image {
-    position: absolute;
-    z-index: 1;
-    left: 90px;
-    top: -10px;
-    display: block;
-    border: 1px solid #999;
-    border-radius: 20px;
-    width: 20px;
-    height: 20px;
-    background-image: url('../img/cross.png');
+.master-card {
+    background-image: url(../img/mastercard.png);
     background-size: cover;
 }
 
-img {
-    width: inherit;
-    height: inherit;
+.american-express {
+    background-image: url(../img/american_express.png);
+    background-size: cover;
 }
 
-.error {
-    position: fixed;
-    top: 100px;
-    left: 410px;
-    font-size: 12px;
-    display: none;
-    background: black;
-    padding: 5px;
-    border-radius: 5px;
+.jcb {
+    background-image: url(../img/jcb.png);
+    background-size: cover;
+}
+
+.maestro {
+    background-image: url(../img/maestro.png);
+    background-size: cover;
+}
+
+.discover {
+    background-image: url(../img/discover.png);
+    background-size: cover;
+}
+
+.mir {
+    background-image: url(../img/mir.png);
+    background-size: cover;
+}
+
+button {
+    border: 1px solid transparent;
+    border-radius: 4px;
     color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
