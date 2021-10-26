@@ -1,4 +1,4 @@
-import luhnAlgorithm from './validate';
+import { luhnAlgorithm, validateNumber } from './validate';
 
 export default class Widget {
   constructor() {
@@ -45,6 +45,7 @@ export default class Widget {
 
     input.addEventListener('input', (e) => {
       this.inputNumber = e.target.value;
+      Widget.checkPaymentSystem(this.inputNumber);
     });
     button.addEventListener('click', () => {
       Widget.checkValidate(this.inputNumber);
@@ -52,10 +53,9 @@ export default class Widget {
   }
 
   static checkValidate(number) {
-    console.log(number);
     const valid = luhnAlgorithm(number);
-    console.log(valid);
     const input = document.querySelector('input');
+
     if (input.classList.contains('valid') || input.classList.contains('not-valid')) {
       input.classList.remove('valid');
       input.classList.remove('not-valid');
@@ -64,6 +64,19 @@ export default class Widget {
       input.classList.add('valid');
     } else {
       input.classList.add('not-valid');
+    }
+  }
+
+  static checkPaymentSystem(number) {
+    const paySystem = validateNumber(number);
+    const listPaySystem = document.querySelectorAll('.card');
+
+    for (const i of listPaySystem) {
+      if (i.classList.contains(`${paySystem}`)) {
+        i.classList.remove('disable');
+      } else {
+        i.classList.add('disable');
+      }
     }
   }
 }
